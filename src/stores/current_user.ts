@@ -13,10 +13,12 @@ export const CurrentUser = types
   .views(self => ({
   }))
   .actions(self => ({
-    update: data => {
+    update(data: string): void {
       applySnapshot(self, data)
     },
+  }))
+  .actions(self => ({
     fetch: () => {
-      self.update({})
+      self.update(1)
     },
   }))
